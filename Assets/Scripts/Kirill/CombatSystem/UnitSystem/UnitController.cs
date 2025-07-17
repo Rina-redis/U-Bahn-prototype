@@ -3,7 +3,7 @@ using UnityEngine;
 
 public abstract class UnitController : MonoBehaviour
 {
-    protected abstract UnitData UnitData { get; }
+    public abstract UnitData UnitData { get; }
     public event Action<UnitController> OnDieEvent;
 
     private float health;
@@ -39,12 +39,20 @@ public abstract class UnitController : MonoBehaviour
 
     protected void ApplyUnitDataStats(UnitData unitData)
     {
-        health += UnitData.health;
-        armor += UnitData.armor;
-        strength += UnitData.strength;
-        speed += UnitData.speed;
-        attackSpeed += UnitData.attackSpeed;
-        armorPenetration += UnitData.armorPenetration;
+        Debug.Log("attack speed in giver UnitData: " + unitData.attackSpeed);
+        Debug.Log("attack speed multiplex: " + speedMultiplex);
+        Debug.Log("attack speed just: " + attackSpeed);
+        Debug.Log("attack speed calculated: " + AttackSpeed);
+
+        health += unitData.health;
+        armor += unitData.armor;
+        strength += unitData.strength;
+        speed += unitData.speed;
+        attackSpeed += unitData.attackSpeed;
+        armorPenetration += unitData.armorPenetration;
+
+        Debug.Log("Attack Speed after adding just: " + attackSpeed);
+        Debug.Log("Current attack speed:" + AttackSpeed); 
     }
 
     public void ApplyStatusEffect(StatusEffect statusEffect)
@@ -110,9 +118,10 @@ public abstract class UnitController : MonoBehaviour
         }
     }
 
-    public void Hurt(float damage, float enemyPenetration)
+    public virtual void Hurt(float damage, UnitController attacker)
     {
-        health -= damage * (100f / (100f + this.armor - enemyPenetration));
+        Debug.Log("Unit was hurt " + gameObject);
+        health -= damage * (100f / (100f + this.armor - attacker.UnitData.armorPenetration));
         if (health <= 0)
         {
             health = 0;

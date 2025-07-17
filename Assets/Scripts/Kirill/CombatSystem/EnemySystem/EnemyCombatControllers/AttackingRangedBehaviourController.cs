@@ -40,7 +40,7 @@ public class AttackingRangedBehaviourController : CombatBehaviourController
     {
         var projectile = Instantiate(data._projectile);
         projectile.transform.position = transform.position;
-        projectile.GetComponent<Projectile>().SetTarget((target.position - transform.position).normalized);
+        projectile.GetComponent<Projectile>().SetTarget((target.position - transform.position).normalized, Controller, CalculateDamage(data.damage));
         curAttackCooldown = 1f;
     }
 
@@ -62,5 +62,9 @@ public class AttackingRangedBehaviourController : CombatBehaviourController
         chaisedPlayer = null;
         target = null;
         curAttackCooldown = 1f;
+    }
+
+    private float CalculateDamage(float damage) {
+        return damage * ((100f + damage) / 100f);
     }
 }

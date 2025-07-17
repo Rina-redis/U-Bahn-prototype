@@ -16,5 +16,5 @@ MonoBehaviour:
   armor: 5
   strength: 10
   speed: 5
-  attackSpeed: 2
+  attackSpeed: 0.35
   armorPenetration: 0

@@ -5,10 +5,12 @@ public class ProjectileSpellExecutor : MonoBehaviour
 {
     private ProjectileSpellData data;
     private Transform castTransform;
+    PlayerCombatSystem player;
 
-    public void Initialize(ProjectileSpellData spellData, Transform castTransform, Vector2 castedPoint)
+    public void Initialize(ProjectileSpellData spellData, Transform castTransform, Vector2 castedPoint, PlayerCombatSystem player)
     {
         data = spellData;
+        this.player = player;
         if (data.targetType == TargetType.CURRENT_TARGET)
         {
             Debug.LogError("Projectile has wrong target type, or the wrong function was called");
@@ -23,12 +25,13 @@ public class ProjectileSpellExecutor : MonoBehaviour
         {
             StartCoroutine(ExecuteSpell(castedPoint));
         }
-        
+
     }
 
-    public void Initialize(ProjectileSpellData spellData, Transform castTransform, Transform targetTransform)
+    public void Initialize(ProjectileSpellData spellData, Transform castTransform, Transform targetTransform, PlayerCombatSystem player)
     {
         data = spellData;
+        this.player = player;
         if (data.targetType != TargetType.CURRENT_TARGET)
         {
             Debug.LogError("Projectile has wrong target type, or the wrong function was called");
@@ -69,13 +72,13 @@ public class ProjectileSpellExecutor : MonoBehaviour
     private void SpawnProjectile(Vector2 castedPointOrDirection)
     {
         var projectile = Instantiate(data._projectile);
-        projectile.transform.position = transform.position;
-        projectile.GetComponent<Projectile>().SetTarget(castedPointOrDirection);
+        projectile.transform.position = castTransform.position;
+        projectile.GetComponent<Projectile>().SetTarget(castedPointOrDirection, player, data.damageProExecution);
     }
     private void SpawnProjectile(Transform targetTransform)
     {
         var projectile = Instantiate(data._projectile);
-        projectile.transform.position = transform.position;
-        projectile.GetComponent<Projectile>().SetTarget(targetTransform);
+        projectile.transform.position = castTransform.position;
+        projectile.GetComponent<Projectile>().SetTarget(targetTransform, player, data.damageProExecution);
     }
 }

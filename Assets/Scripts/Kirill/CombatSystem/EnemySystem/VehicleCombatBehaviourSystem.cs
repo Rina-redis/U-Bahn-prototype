@@ -4,7 +4,7 @@ using UnityEngine;
 public class VehicleCombatBehaviourSystem : UnitController
 {
     [SerializeField] private VehicleCombatSystemData data;
-    protected override UnitData UnitData => data;
+    public override UnitData UnitData => data;
 
     public bool useAbordagingController;
     public bool useChasingController;

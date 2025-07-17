@@ -6,16 +6,16 @@ public class ProjectileSpell : ActiveSpell
 
     public override SpellData SpellData => data;
 
-    protected override void Execute(PlayerMock playerMock, Transform start, Vector2 end)
+    protected override void Execute(PlayerCombatSystem player, Transform start, Vector2 end)
     {
-        ProjectileSpellExecutor executor = playerMock.gameObject.AddComponent<ProjectileSpellExecutor>();
+        ProjectileSpellExecutor executor = player.gameObject.AddComponent<ProjectileSpellExecutor>();
         if (data.targetType == TargetType.CURRENT_TARGET)
         {
-            executor.Initialize(data, start, playerMock.GetCurrentTargetSelected());
+            executor.Initialize(data, start, player.GetCurrentTargetSelected().transform, player);
         }
         else
         {
-            executor.Initialize(data, start, end);
+            executor.Initialize(data, start, end, player);
         }
     }
 }

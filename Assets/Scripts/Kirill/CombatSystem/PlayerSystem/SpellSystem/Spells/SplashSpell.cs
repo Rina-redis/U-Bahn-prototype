@@ -7,7 +7,7 @@ public class SplashSpell : ActiveSpell
 
     public override SpellData SpellData => data;
 
-    protected override void Execute(PlayerMock playerMock, Transform start, Vector2 end)
+    protected override void Execute(PlayerCombatSystem player, Transform start, Vector2 end)
     {
         GameObject go = Instantiate(_splashSpellExecutor);
         go.transform.parent = transform;
@@ -15,6 +15,6 @@ public class SplashSpell : ActiveSpell
         go.transform.up = (end - (Vector2)start.position).normalized;
 
         SplashSpellExecutor executor = go.GetComponent<SplashSpellExecutor>();
-        executor.Initialize(data, start, end);
+        executor.Initialize(data, player, start, end);
     }
 }

@@ -19,6 +19,10 @@ MonoBehaviour:
   action: {fileID: 0}
   spell: {fileID: 3059330847231248218, guid: 57473fafa503a8c458525be489345df8, type: 3}
   damage: 12
-  cooldown: 0
-  range: 5
+  cooldown: 2.05
+  range: 13.43
   unitData: {fileID: 11400000, guid: ace6ed6ee346a5a4e8bc9f89804304ea, type: 2}
+  canShoot: 1
+  projectile: {fileID: 7353867467715640069, guid: 53175f18be7657749b3bf2c6f4ba8732, type: 3}
+  canDealSplashDamage: 0
+  fov: 138.8

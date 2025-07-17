@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e6a6f2ca3c31944a8e0df7de28a773e, type: 3}
   m_Name: VehicleData_Car_System
   m_EditorClassIdentifier: 
+  unitType: 2
   health: 200
   armor: 15
   strength: 0

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0492f1b52aefb441a52a1b97e28df01, type: 3}
   m_Name: EnemyCombatSystemData_Ranged_Easy
   m_EditorClassIdentifier: 
+  unitType: 1
   health: 10
   armor: 2
   strength: 10

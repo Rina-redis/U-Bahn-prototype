@@ -19,5 +19,4 @@ public class ProjectileData : ScriptableObject
     public TargetType targetType;
     public HitType hitType;
     public float speed;
-    public float damage;
 }

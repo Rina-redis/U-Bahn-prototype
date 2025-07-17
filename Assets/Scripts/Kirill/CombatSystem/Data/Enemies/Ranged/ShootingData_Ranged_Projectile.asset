@@ -14,5 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetType: 0
   hitType: 1
-  speed: 3.87
-  damage: 2.13
+  speed: 1.38

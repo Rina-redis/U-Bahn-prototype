@@ -1,5 +1,11 @@
 using UnityEngine;
 
+public enum UnitType
+{
+    PLAYER,
+    ENEMY,
+    VEHICLE
+}
 public enum UnitParams
 {
     HEALTH,
@@ -12,6 +18,7 @@ public enum UnitParams
 [CreateAssetMenu(fileName = "UnitData", menuName = "Scriptable Objects/UnitData")]
 public class UnitData : ScriptableObject
 {
+    public UnitType unitType;
     public float health;
     public float armor;
     public float strength;

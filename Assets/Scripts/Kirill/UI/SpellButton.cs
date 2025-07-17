@@ -9,7 +9,7 @@ public class SpellButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     [SerializeField] private Camera mainCamera;
     [SerializeField] private Image cooldownOverlay;
     [SerializeField] private Image icon;
-    [SerializeField] private PlayerMock playerMock;
+    [SerializeField] private PlayerCombatSystem player;
 
     private ActiveSpell spell;
 
@@ -46,7 +46,7 @@ public class SpellButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         Vector3 mouseScreenPosition = Input.mousePosition;
         Vector2 worldMousePosition = mainCamera.ScreenToWorldPoint(new Vector3(mouseScreenPosition.x, mouseScreenPosition.y));
 
-        spell.Activate(playerMock, playerMock.gameObject.transform, worldMousePosition);
+        spell.Activate(player, player.gameObject.transform, worldMousePosition);
 
         Debug.Log("Spell cast toward: " + worldMousePosition);
 

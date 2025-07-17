@@ -9,14 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0492f1b52aefb441a52a1b97e28df01, type: 3}
-  m_Name: EnemyCombatSystemData_Scoundrel_Easy
+  m_Script: {fileID: 11500000, guid: e5da4f8f78137b04bb877cf3ea47e55a, type: 3}
+  m_Name: ShootingData_Uzi_Projectile
   m_EditorClassIdentifier: 
-  unitType: 1
-  health: 5
-  armor: 1
-  strength: 0
-  speed: 5
-  attackSpeed: 0
-  armorPenetration: 0
-  enemyType: 2
+  targetType: 2
+  hitType: 1
+  speed: 4.77

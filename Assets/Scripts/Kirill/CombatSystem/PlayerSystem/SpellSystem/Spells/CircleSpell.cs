@@ -6,9 +6,9 @@ public class CircleSpell : ActiveSpell
 
     public override SpellData SpellData => data;
 
-    protected override void Execute(PlayerMock playerMock, Transform start, Vector2 end) // end is not used
+    protected override void Execute(PlayerCombatSystem player, Transform start, Vector2 end) // end is not used
     {
-        CircleSpellExecutor executor = playerMock.gameObject.AddComponent<CircleSpellExecutor>();
-        executor.Initialize(data, start);
+        CircleSpellExecutor executor = player.gameObject.AddComponent<CircleSpellExecutor>();
+        executor.Initialize(data, start, player);
     }
 }

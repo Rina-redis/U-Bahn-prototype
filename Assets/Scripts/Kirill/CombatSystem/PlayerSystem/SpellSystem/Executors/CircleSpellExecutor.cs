@@ -5,10 +5,12 @@ public class CircleSpellExecutor : MonoBehaviour
 {
     private CircleSpellData data;
     private Transform castTransform;
+    private PlayerCombatSystem player;
 
-    public void Initialize(CircleSpellData spellData, Transform castTransform)
+    public void Initialize(CircleSpellData spellData, Transform castTransform, PlayerCombatSystem player)
     {
         data = spellData;
+        this.player = player;
         this.castTransform = castTransform;
         StartCoroutine(ExecuteSpell());
     }
@@ -35,11 +37,18 @@ public class CircleSpellExecutor : MonoBehaviour
         foreach (Collider hit in hits)
         {
             Debug.Log("I hit an enemy with circle: " + hit.gameObject);
-            /*var health = hit.GetComponent<Health>();
-            if (health != null)
+            if (hit.TryGetComponent(out UnitController unit))
             {
-                health.TakeDamage(data.damageProExecution);
-            }*/
+                if (unit is PlayerCombatSystem)
+                    return;
+                Debug.Log("I am hitting an enemy");
+                unit.Hurt(CalculateDamage(data.damageProExecution), player);
+            }
         }
+    }
+
+    private float CalculateDamage(float damage)
+    {
+        return damage * ((100f + damage) / 100f);
     }
 }

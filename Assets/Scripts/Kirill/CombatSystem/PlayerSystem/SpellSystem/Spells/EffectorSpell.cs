@@ -5,7 +5,7 @@ public class EffectorSpell : ActiveSpell
     [SerializeField] private EffectorSpellData data;
     public override SpellData SpellData => data;
 
-    protected override void Execute(PlayerMock playerMock, Transform start, Vector2 end)
+    protected override void Execute(PlayerCombatSystem player, Transform start, Vector2 end)
     {
         if (data.type == EffectorSpellType.SELF)
         {

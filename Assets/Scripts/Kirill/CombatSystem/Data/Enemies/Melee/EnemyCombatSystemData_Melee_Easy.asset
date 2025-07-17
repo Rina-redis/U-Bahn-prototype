@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0492f1b52aefb441a52a1b97e28df01, type: 3}
   m_Name: EnemyCombatSystemData_Melee_Easy
   m_EditorClassIdentifier: 
+  unitType: 1
   health: 15
   armor: 10
   strength: 10

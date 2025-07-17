@@ -6,7 +6,9 @@ public class Projectile : MonoBehaviour
     Transform target;
     Vector2 flyingDirection;
     bool isFlying = false;
-    public void SetTarget(Transform target)
+    UnitController attacker;
+    float damage;
+    public void SetTarget(Transform target, UnitController attacker, float damage)
     {
         if (data.targetType != TargetType.CURRENT_TARGET)
         {
@@ -14,12 +16,14 @@ public class Projectile : MonoBehaviour
             return;
         }
         this.target = target;
+        this.attacker = attacker;
+        this.damage = damage;
         UpdateFlyingDirection(target.position);
 
         isFlying = true;
     }
 
-    public void SetTarget(Vector2 positionOrDirection)
+    public void SetTarget(Vector2 positionOrDirection, UnitController attacker, float damage)
     {
         if (data.targetType == TargetType.CURRENT_TARGET)
         {
@@ -34,7 +38,8 @@ public class Projectile : MonoBehaviour
         {
             UpdateFlyingDirection(positionOrDirection);
         }
-
+        this.attacker = attacker;
+        this.damage = damage;
         isFlying = true;
     }
 
@@ -58,12 +63,17 @@ public class Projectile : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("Projectule sensed someone: " + collision.gameObject);
         if (data.hitType == HitType.NOBODY)
             return;
-        collision.gameObject.TryGetComponent<PlayerMock>(out PlayerMock playerMock);
-        if (playerMock != null)
+        collision.gameObject.TryGetComponent<UnitController>(out UnitController unit);
+        if (unit != null)
         {
-            playerMock.Hurt(data.damage);
+            Debug.Log("I can attack someone, but will I do it?");
+            if (attacker.UnitData.unitType == unit.UnitData.unitType)
+                return;
+            Debug.Log("I am attacking");
+            unit.Hurt(damage, attacker);
             DestroyGO();
         }
     }
