@@ -11,6 +11,7 @@ public class ProjectileSpellExecutor : MonoBehaviour
     {
         data = spellData;
         this.player = player;
+        this.castTransform = castTransform;
         if (data.targetType == TargetType.CURRENT_TARGET)
         {
             Debug.LogError("Projectile has wrong target type, or the wrong function was called");
@@ -32,6 +33,7 @@ public class ProjectileSpellExecutor : MonoBehaviour
     {
         data = spellData;
         this.player = player;
+        this.castTransform = castTransform;
         if (data.targetType != TargetType.CURRENT_TARGET)
         {
             Debug.LogError("Projectile has wrong target type, or the wrong function was called");
@@ -72,12 +74,14 @@ public class ProjectileSpellExecutor : MonoBehaviour
     private void SpawnProjectile(Vector2 castedPointOrDirection)
     {
         var projectile = Instantiate(data._projectile);
+        projectile.transform.parent = castTransform;
         projectile.transform.position = castTransform.position;
         projectile.GetComponent<Projectile>().SetTarget(castedPointOrDirection, player, data.damageProExecution, data.targetTypes);
     }
     private void SpawnProjectile(Transform targetTransform)
     {
         var projectile = Instantiate(data._projectile);
+        projectile.transform.parent = castTransform;
         projectile.transform.position = castTransform.position;
         projectile.GetComponent<Projectile>().SetTarget(targetTransform, player, data.damageProExecution, data.targetTypes);
     }

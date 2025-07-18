@@ -16,11 +16,11 @@ MonoBehaviour:
   spellDescription: 
   icon: {fileID: 0}
   targetType: 0
-  targetTypes: 
+  targetTypes: 0100000002000000
   flightSpeed: 2
   maxDistance: 6
   _projectile: {fileID: 3741640768930393692, guid: 3bd0263e6b636d445a035b789c160d0d, type: 3}
   executionTime: 1
   executionDelay: 0.5
   executionAmount: 1
-  damageProExecution: 8
+  damageProExecution: 11111

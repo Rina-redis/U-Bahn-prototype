@@ -17,12 +17,12 @@ MonoBehaviour:
   maxStackSize: 1
   sprite: {fileID: 21300000, guid: 151032beff0704901aa06bcd5d1b8e8f, type: 3}
   action: {fileID: 0}
-  spell: {fileID: 348208862780131335, guid: c72f1d9fa82312649a314210e9d49f58, type: 3}
+  spell: {fileID: 961030587625051347, guid: 5d49f3983ad27094c938a4cfd65442ab, type: 3}
   damage: 12
   cooldown: 2.05
   range: 13.43
   unitData: {fileID: 11400000, guid: ace6ed6ee346a5a4e8bc9f89804304ea, type: 2}
-  canShoot: 1
+  canShoot: 0
   projectile: {fileID: 7353867467715640069, guid: 53175f18be7657749b3bf2c6f4ba8732, type: 3}
   canDealSplashDamage: 0
   fov: 138.8
