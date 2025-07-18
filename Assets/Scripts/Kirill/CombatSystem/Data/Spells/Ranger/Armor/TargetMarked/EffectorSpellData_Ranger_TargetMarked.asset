@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebb3fd5260d70b64b89555ba91718198, type: 3}
+  m_Name: EffectorSpellData_Ranger_TargetMarked
+  m_EditorClassIdentifier: 
+  spellName: Target Marked
+  spellDescription: 
+  icon: {fileID: 0}
+  statusEffects:
+  - {fileID: 11400000, guid: 5d7adc61d6c4ef94c9b5a85827aef299, type: 2}
+  - {fileID: 11400000, guid: d3fd24ac7839ea741956cb46c88d7f44, type: 2}
+  type: 0

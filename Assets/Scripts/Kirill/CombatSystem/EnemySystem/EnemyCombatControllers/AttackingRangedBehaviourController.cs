@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using System.Collections.Generic;
 
 public class AttackingRangedBehaviourController : CombatBehaviourController
 {
@@ -9,11 +10,16 @@ public class AttackingRangedBehaviourController : CombatBehaviourController
     private PlayerMock chaisedPlayer;
     private float curAttackCooldown = 0f;
 
+    List<UnitType> unitTypes = new List<UnitType>();
+
     public void SetTarget(PlayerMock player)
     {
         chaisedPlayer = player;
         target = chaisedPlayer.gameObject.transform;
         player.onDieEvent += OnPlayerKilled;
+
+        if (unitTypes.Count == 0)
+            unitTypes.Add(UnitType.PLAYER);
     }
 
     //---// Behaviour //---//
@@ -40,7 +46,8 @@ public class AttackingRangedBehaviourController : CombatBehaviourController
     {
         var projectile = Instantiate(data._projectile);
         projectile.transform.position = transform.position;
-        projectile.GetComponent<Projectile>().SetTarget((target.position - transform.position).normalized, Controller, CalculateDamage(data.damage));
+
+        projectile.GetComponent<Projectile>().SetTarget((target.position - transform.position).normalized, Controller, CalculateDamage(data.damage), unitTypes);
         curAttackCooldown = 1f;
     }
 

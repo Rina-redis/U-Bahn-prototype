@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47c95146228a2fa47a4a86ee4b3dedfe, type: 3}
-  m_Name: ProjectileSpellData_Ranger_Poker
+  m_Name: ProjectileSpellData_Ranger_PewPew
   m_EditorClassIdentifier: 
-  spellName: Poker
+  spellName: Pew Pew
   spellDescription: 
   icon: {fileID: 0}
-  targetType: 0
+  targetType: 2
   targetTypes: 
-  flightSpeed: 2
-  maxDistance: 6
-  _projectile: {fileID: 3741640768930393692, guid: 3bd0263e6b636d445a035b789c160d0d, type: 3}
-  executionTime: 1
-  executionDelay: 0.5
-  executionAmount: 1
-  damageProExecution: 8
+  flightSpeed: 3
+  maxDistance: 0
+  _projectile: {fileID: 3221260235161707329, guid: d94c31f834d2b7f4189e105e0b164daa, type: 3}
+  executionTime: 0
+  executionDelay: 0
+  executionAmount: 0
+  damageProExecution: 0

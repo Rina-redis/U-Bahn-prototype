@@ -11,9 +11,9 @@ public class StatusEffect : Effect
     public float effectRadius;
     public bool isPermanent;
 
-    public void ApplyEffect(Transform target)
+    public override void ApplyEffect(PlayerCombatSystem player, Transform start)
     {
-        var executor = target.gameObject.AddComponent<StatusEffectExecutor>();
+        var executor = start.gameObject.AddComponent<StatusEffectExecutor>();
         executor.Init(this);
     }
 }

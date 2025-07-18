@@ -9,10 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5da4f8f78137b04bb877cf3ea47e55a, type: 3}
-  m_Name: ShootingData_Poker_Projectile
+  m_Script: {fileID: 11500000, guid: 8851e4579b37cb147a995b5e18781ae3, type: 3}
+  m_Name: CircleSpellData_Ranger_FireCry
   m_EditorClassIdentifier: 
-  targetType: 0
-  hitType: 2
-  speed: 3
-  effects: []
+  spellName: Fire Cry
+  spellDescription: 
+  icon: {fileID: 0}
+  radius: 3
+  executionTime: 4
+  executionDelay: 0.5
+  executionAmount: 20
+  damageProExecution: 1

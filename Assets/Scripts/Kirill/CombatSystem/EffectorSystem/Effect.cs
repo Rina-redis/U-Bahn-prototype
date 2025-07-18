@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Effect", menuName = "Scriptable Objects/Effect")]
-public class Effect : ScriptableObject
+public abstract class Effect : ScriptableObject
 {
-    
+    public abstract void ApplyEffect(PlayerCombatSystem player, Transform start);
 }

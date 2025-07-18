@@ -73,12 +73,12 @@ public class ProjectileSpellExecutor : MonoBehaviour
     {
         var projectile = Instantiate(data._projectile);
         projectile.transform.position = castTransform.position;
-        projectile.GetComponent<Projectile>().SetTarget(castedPointOrDirection, player, data.damageProExecution);
+        projectile.GetComponent<Projectile>().SetTarget(castedPointOrDirection, player, data.damageProExecution, data.targetTypes);
     }
     private void SpawnProjectile(Transform targetTransform)
     {
         var projectile = Instantiate(data._projectile);
         projectile.transform.position = castTransform.position;
-        projectile.GetComponent<Projectile>().SetTarget(targetTransform, player, data.damageProExecution);
+        projectile.GetComponent<Projectile>().SetTarget(targetTransform, player, data.damageProExecution, data.targetTypes);
     }
 }

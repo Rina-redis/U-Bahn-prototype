@@ -9,10 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5da4f8f78137b04bb877cf3ea47e55a, type: 3}
-  m_Name: ShootingData_Poker_Projectile
+  m_Script: {fileID: 11500000, guid: ebb3fd5260d70b64b89555ba91718198, type: 3}
+  m_Name: EffectorSpellData_Ranger_SecondWind
   m_EditorClassIdentifier: 
-  targetType: 0
-  hitType: 2
-  speed: 3
-  effects: []
+  spellName: Second Wind
+  spellDescription: 
+  icon: {fileID: 0}
+  statusEffects:
+  - {fileID: 11400000, guid: 5f91b7189fec5524eb97d19323ed8689, type: 2}
+  type: 0

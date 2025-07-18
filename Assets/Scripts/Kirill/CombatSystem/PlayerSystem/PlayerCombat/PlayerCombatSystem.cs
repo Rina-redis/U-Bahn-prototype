@@ -20,9 +20,28 @@ public class PlayerCombatSystem : UnitController
     private float curAttackCooldown = 0f;
     private bool isSetUp = false;
 
+    List<UnitType> unitTypesEnemy;
+    List<UnitType> unitTypesVehicle;
+    List<UnitType> unitTypesEnemyAndVehicle;
+
     void Awake()
     {
         gameCombatManager = GameObject.Find("GameCombatManager").GetComponent<GameCombatManager>();
+
+        unitTypesEnemy = new List<UnitType>
+        {
+            UnitType.ENEMY
+        };
+        unitTypesVehicle = new List<UnitType>
+        {
+            UnitType.VEHICLE
+        };
+        unitTypesEnemyAndVehicle = new List<UnitType>
+        {
+            UnitType.ENEMY,
+            UnitType.VEHICLE
+        };
+
         base.Init();
     }
 
@@ -170,7 +189,8 @@ public class PlayerCombatSystem : UnitController
     {
         var projectile = Instantiate(weaponEq.projectile);
         projectile.transform.position = transform.position;
-        projectile.GetComponent<Projectile>().SetTarget(target.transform, this, CalculateDamage(weaponEq.damage));
+        projectile.GetComponent<Projectile>().SetTarget(target.transform, this, CalculateDamage(weaponEq.damage), unitTypesEnemyAndVehicle);
+        // Later on make logic for whict type of enemies to attack
 
         curAttackCooldown = weaponEq.cooldown;
     }
