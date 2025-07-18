@@ -11,9 +11,19 @@ public class EffectorSpell : ActiveSpell
         {
             foreach (StatusEffect statusEffect in data.statusEffects)
             {
-                statusEffect.ApplyEfect(start);
+                statusEffect.ApplyEffect(start);
             }
         }
         // TODO: if apply effects on others, like areas, etc.
+        else if (data.type == EffectorSpellType.TARGET)
+        {
+            foreach (StatusEffect statusEffect in data.statusEffects)
+            {
+                var target = player.GetCurrentTargetSelected();
+                if (target == null)
+                    return;
+                statusEffect.ApplyEffect(target.transform);
+            }
+        }
     }
 }

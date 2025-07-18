@@ -27,6 +27,7 @@ public class SpellButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     public void SetSpell(Spell spell)
     {
+        Debug.Log("I AM SETTING SPELL: " + spell);
         if (spell is ActiveSpell activeSpell)
         {
             this.spell = activeSpell;
@@ -42,6 +43,9 @@ public class SpellButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public void OnPointerUp(PointerEventData eventData)
     {
         if (!isPreparingSpell) return;
+
+        Debug.Log(spell);
+        Debug.Log(player);
 
         Vector3 mouseScreenPosition = Input.mousePosition;
         Vector2 worldMousePosition = mainCamera.ScreenToWorldPoint(new Vector3(mouseScreenPosition.x, mouseScreenPosition.y));

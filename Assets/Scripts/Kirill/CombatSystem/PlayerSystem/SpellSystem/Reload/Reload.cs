@@ -9,7 +9,7 @@ public abstract class Reload : MonoBehaviour
     public abstract bool IsReady();
     protected void Trigger()
     {
-        OnReloadedEvent.Invoke();
+        OnReloadedEvent?.Invoke();
     }
     
 }

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8851e4579b37cb147a995b5e18781ae3, type: 3}
+  m_Name: CircleSpellData_Warrior_MutantHarvester
+  m_EditorClassIdentifier: 
+  spellName: Mutant Harvester
+  spellDescription: 
+  icon: {fileID: 0}
+  radius: 2.25
+  executionTime: 0.8
+  executionDelay: 0.36
+  executionAmount: 2
+  damageProExecution: 6.61
