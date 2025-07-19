@@ -1,0 +1,986 @@
+{
+  "data": [
+    {
+      "stationName": "Olympia-Einkaufszentrum",
+      "stationGlobalID": "de:09162:360",
+      "lat": 48.182055794883,
+      "long": 11.530409598395,
+      "connections": [
+        "Georg-Brauchle-Ring",
+        "Moosacher St.-Martins-Platz",
+        "Oberwiesenfeld"
+      ]
+    },
+    {
+      "stationName": "Georg-Brauchle-Ring",
+      "stationGlobalID": "de:09162:312",
+      "lat": 48.176659394882996,
+      "long": 11.529000898395,
+      "connections": [
+        "Olympia-Einkaufszentrum",
+        "Westfriedhof"
+      ]
+    },
+    {
+      "stationName": "Westfriedhof",
+      "stationGlobalID": "de:09162:200",
+      "lat": 48.169597494884,
+      "long": 11.528448498394999,
+      "connections": [
+        "Georg-Brauchle-Ring",
+        "Gern"
+      ]
+    },
+    {
+      "stationName": "Gern",
+      "stationGlobalID": "de:09162:990",
+      "lat": 48.162789194884,
+      "long": 11.529068098395,
+      "connections": [
+        "Westfriedhof",
+        "Rotkreuzplatz"
+      ]
+    },
+    {
+      "stationName": "Rotkreuzplatz",
+      "stationGlobalID": "de:09162:190",
+      "lat": 48.153388794884,
+      "long": 11.533259698395002,
+      "connections": [
+        "Gern",
+        "Maillingerstraße"
+      ]
+    },
+    {
+      "stationName": "Maillingerstraße",
+      "stationGlobalID": "de:09162:180",
+      "lat": 48.149942494884,
+      "long": 11.545553798393,
+      "connections": [
+        "Rotkreuzplatz",
+        "Stiglmaierplatz"
+      ]
+    },
+    {
+      "stationName": "Stiglmaierplatz",
+      "stationGlobalID": "de:09162:170",
+      "lat": 48.147518294884,
+      "long": 11.558524498391,
+      "connections": [
+        "Maillingerstraße",
+        "München Hbf"
+      ]
+    },
+    {
+      "stationName": "München Hbf",
+      "stationGlobalID": "de:09162:100",
+      "lat": 48.140291,
+      "long": 11.559602,
+      "connections": [
+        "Stiglmaierplatz",
+        "Sendlinger Tor",
+        "Theresienwiese",
+        "Karlsplatz",
+        "Karlsplatz (Stachus)"
+      ]
+    },
+    {
+      "stationName": "Sendlinger Tor",
+      "stationGlobalID": "de:09162:50",
+      "lat": 48.133466894885004,
+      "long": 11.56667209839,
+      "connections": [
+        "München Hbf",
+        "Fraunhoferstraße",
+        "Marienplatz",
+        "Goetheplatz"
+      ]
+    },
+    {
+      "stationName": "Fraunhoferstraße",
+      "stationGlobalID": "de:09162:150",
+      "lat": 48.128646694885,
+      "long": 11.575027498389,
+      "connections": [
+        "Sendlinger Tor",
+        "Kolumbusplatz",
+        "Odeonsplatz"
+      ]
+    },
+    {
+      "stationName": "Kolumbusplatz",
+      "stationGlobalID": "de:09162:160",
+      "lat": 48.118888394886,
+      "long": 11.576835798388,
+      "connections": [
+        "Fraunhoferstraße",
+        "Candidplatz",
+        "Lehel",
+        "Silberhornstraße"
+      ]
+    },
+    {
+      "stationName": "Candidplatz",
+      "stationGlobalID": "de:09162:1180",
+      "lat": 48.111590494886,
+      "long": 11.571085698389,
+      "connections": [
+        "Kolumbusplatz",
+        "Wettersteinplatz"
+      ]
+    },
+    {
+      "stationName": "Wettersteinplatz",
+      "stationGlobalID": "de:09162:1190",
+      "lat": 48.108752094886,
+      "long": 11.574389798389001,
+      "connections": [
+        "Candidplatz",
+        "St.-Quirin-Platz"
+      ]
+    },
+    {
+      "stationName": "St.-Quirin-Platz",
+      "stationGlobalID": "de:09162:1200",
+      "lat": 48.104234694885996,
+      "long": 11.581495298388,
+      "connections": [
+        "Wettersteinplatz",
+        "Mangfallplatz"
+      ]
+    },
+    {
+      "stationName": "Mangfallplatz",
+      "stationGlobalID": "de:09162:1210",
+      "lat": 48.097448,
+      "long": 11.579967,
+      "connections": [
+        "St.-Quirin-Platz"
+      ]
+    },
+    {
+      "stationName": "Feldmoching",
+      "stationGlobalID": "de:09162:320",
+      "lat": 48.213833,
+      "long": 11.540827,
+      "connections": [
+        "Hasenbergl"
+      ]
+    },
+    {
+      "stationName": "Hasenbergl",
+      "stationGlobalID": "de:09162:790",
+      "lat": 48.213202294882,
+      "long": 11.556207898391001,
+      "connections": [
+        "Feldmoching",
+        "Dülferstraße"
+      ]
+    },
+    {
+      "stationName": "Dülferstraße",
+      "stationGlobalID": "de:09162:780",
+      "lat": 48.212349294882,
+      "long": 11.56326069839,
+      "connections": [
+        "Hasenbergl",
+        "Harthof"
+      ]
+    },
+    {
+      "stationName": "Harthof",
+      "stationGlobalID": "de:09162:770",
+      "lat": 48.204247694882,
+      "long": 11.56930689839,
+      "connections": [
+        "Dülferstraße",
+        "Am Hart"
+      ]
+    },
+    {
+      "stationName": "Am Hart",
+      "stationGlobalID": "de:09162:760",
+      "lat": 48.196609594882,
+      "long": 11.571639498389,
+      "connections": [
+        "Harthof",
+        "Frankfurter Ring"
+      ]
+    },
+    {
+      "stationName": "Frankfurter Ring",
+      "stationGlobalID": "de:09162:750",
+      "lat": 48.186814394883,
+      "long": 11.572638598389,
+      "connections": [
+        "Am Hart",
+        "Milbertshofen"
+      ]
+    },
+    {
+      "stationName": "Milbertshofen",
+      "stationGlobalID": "de:09162:740",
+      "lat": 48.180949294883,
+      "long": 11.573064998389,
+      "connections": [
+        "Frankfurter Ring",
+        "Scheidplatz"
+      ]
+    },
+    {
+      "stationName": "Scheidplatz",
+      "stationGlobalID": "de:09162:400",
+      "lat": 48.171549594883004,
+      "long": 11.572653098388999,
+      "connections": [
+        "Milbertshofen",
+        "Hohenzollernplatz",
+        "Petuelring",
+        "Bonner Platz"
+      ]
+    },
+    {
+      "stationName": "Hohenzollernplatz",
+      "stationGlobalID": "de:09162:140",
+      "lat": 48.161811494884,
+      "long": 11.568440798389998,
+      "connections": [
+        "Scheidplatz",
+        "Josephsplatz"
+      ]
+    },
+    {
+      "stationName": "Josephsplatz",
+      "stationGlobalID": "de:09162:130",
+      "lat": 48.155683694884004,
+      "long": 11.56697069839,
+      "connections": [
+        "Hohenzollernplatz",
+        "Theresienstraße"
+      ]
+    },
+    {
+      "stationName": "Theresienstraße",
+      "stationGlobalID": "de:09162:120",
+      "lat": 48.151441194884,
+      "long": 11.56431799839,
+      "connections": [
+        "Josephsplatz",
+        "Königsplatz"
+      ]
+    },
+    {
+      "stationName": "Königsplatz",
+      "stationGlobalID": "de:09162:110",
+      "lat": 48.145493894884,
+      "long": 11.56340059839,
+      "connections": [
+        "Theresienstraße",
+        "München Hbf"
+      ]
+    },
+    {
+      "stationName": "Odeonsplatz",
+      "stationGlobalID": "de:09162:60",
+      "lat": 48.142682,
+      "long": 11.577487,
+      "connections": [
+        "Fraunhoferstraße",
+        "Lehel",
+        "Universität",
+        "Marienplatz",
+        "Karlsplatz"
+      ]
+    },
+    {
+      "stationName": "Lehel",
+      "stationGlobalID": "de:09162:590",
+      "lat": 48.13978939488501,
+      "long": 11.587943498387,
+      "connections": [
+        "Odeonsplatz",
+        "Kolumbusplatz",
+        "Max-Weber-Platz"
+      ]
+    },
+    {
+      "stationName": "Silberhornstraße",
+      "stationGlobalID": "de:09162:1170",
+      "lat": 48.115029494886,
+      "long": 11.579733498388,
+      "connections": [
+        "Kolumbusplatz",
+        "Untersbergstraße"
+      ]
+    },
+    {
+      "stationName": "Untersbergstraße",
+      "stationGlobalID": "de:09162:1160",
+      "lat": 48.112471294886,
+      "long": 11.587668098386999,
+      "connections": [
+        "Silberhornstraße",
+        "Giesing"
+      ]
+    },
+    {
+      "stationName": "Giesing",
+      "stationGlobalID": "de:09162:1110",
+      "lat": 48.110963094885996,
+      "long": 11.595733198386,
+      "connections": [
+        "Untersbergstraße",
+        "Karl-Preis-Platz"
+      ]
+    },
+    {
+      "stationName": "Karl-Preis-Platz",
+      "stationGlobalID": "de:09162:1070",
+      "lat": 48.118406,
+      "long": 11.609378,
+      "connections": [
+        "Giesing",
+        "Innsbrucker Ring"
+      ]
+    },
+    {
+      "stationName": "Innsbrucker Ring",
+      "stationGlobalID": "de:09162:1060",
+      "lat": 48.120415,
+      "long": 11.619196,
+      "connections": [
+        "Karl-Preis-Platz",
+        "Josephsburg",
+        "München, Ostbahnhof",
+        "Michaelibad"
+      ]
+    },
+    {
+      "stationName": "Josephsburg",
+      "stationGlobalID": "de:09162:1220",
+      "lat": 48.126520794885,
+      "long": 11.633848398381,
+      "connections": [
+        "Innsbrucker Ring",
+        "Kreillerstraße"
+      ]
+    },
+    {
+      "stationName": "Kreillerstraße",
+      "stationGlobalID": "de:09162:1230",
+      "lat": 48.125716694885,
+      "long": 11.646716398379,
+      "connections": [
+        "Josephsburg",
+        "Trudering"
+      ]
+    },
+    {
+      "stationName": "Trudering",
+      "stationGlobalID": "de:09162:920",
+      "lat": 48.125562194885,
+      "long": 11.662776498377001,
+      "connections": [
+        "Kreillerstraße",
+        "Moosfeld"
+      ]
+    },
+    {
+      "stationName": "Moosfeld",
+      "stationGlobalID": "de:09162:1240",
+      "lat": 48.130753594885,
+      "long": 11.671044798375,
+      "connections": [
+        "Trudering",
+        "Messestadt West"
+      ]
+    },
+    {
+      "stationName": "Messestadt West",
+      "stationGlobalID": "de:09162:1250",
+      "lat": 48.133377394885,
+      "long": 11.690763298373001,
+      "connections": [
+        "Moosfeld",
+        "Messestadt Ost"
+      ]
+    },
+    {
+      "stationName": "Messestadt Ost",
+      "stationGlobalID": "de:09162:1260",
+      "lat": 48.133384,
+      "long": 11.703261,
+      "connections": [
+        "Messestadt West"
+      ]
+    },
+    {
+      "stationName": "Moosach",
+      "stationGlobalID": "de:09162:300",
+      "lat": 48.180792,
+      "long": 11.507643,
+      "connections": [
+        "Moosacher St.-Martins-Platz"
+      ]
+    },
+    {
+      "stationName": "Moosacher St.-Martins-Platz",
+      "stationGlobalID": "de:09162:370",
+      "lat": 48.181763294883,
+      "long": 11.517810098397,
+      "connections": [
+        "Moosach",
+        "Olympia-Einkaufszentrum"
+      ]
+    },
+    {
+      "stationName": "Oberwiesenfeld",
+      "stationGlobalID": "de:09162:380",
+      "lat": 48.185982194882996,
+      "long": 11.546161698393,
+      "connections": [
+        "Olympia-Einkaufszentrum",
+        "Olympiazentrum"
+      ]
+    },
+    {
+      "stationName": "Olympiazentrum",
+      "stationGlobalID": "de:09162:350",
+      "lat": 48.178571394883,
+      "long": 11.556194898391,
+      "connections": [
+        "Oberwiesenfeld",
+        "Petuelring"
+      ]
+    },
+    {
+      "stationName": "Petuelring",
+      "stationGlobalID": "de:09162:340",
+      "lat": 48.175611294883,
+      "long": 11.56586989839,
+      "connections": [
+        "Olympiazentrum",
+        "Scheidplatz"
+      ]
+    },
+    {
+      "stationName": "Bonner Platz",
+      "stationGlobalID": "de:09162:410",
+      "lat": 48.166645494884,
+      "long": 11.578130198388,
+      "connections": [
+        "Scheidplatz",
+        "Münchner Freiheit"
+      ]
+    },
+    {
+      "stationName": "Münchner Freiheit",
+      "stationGlobalID": "de:09162:500",
+      "lat": 48.162196494884,
+      "long": 11.586513098387,
+      "connections": [
+        "Bonner Platz",
+        "Giselastraße",
+        "Dietlindenstraße",
+        "Giselastraße"
+      ]
+    },
+    {
+      "stationName": "Giselastraße",
+      "stationGlobalID": "de:09162:80",
+      "lat": 48.156541594884004,
+      "long": 11.583925598388,
+      "connections": [
+        "Münchner Freiheit",
+        "Universität"
+      ]
+    },
+    {
+      "stationName": "Universität",
+      "stationGlobalID": "de:09162:70",
+      "lat": 48.150046694884004,
+      "long": 11.581087498388,
+      "connections": [
+        "Giselastraße",
+        "Odeonsplatz",
+        "Giselastraße"
+      ]
+    },
+    {
+      "stationName": "Marienplatz",
+      "stationGlobalID": "de:09162:2",
+      "lat": 48.137453194885,
+      "long": 11.575004898389,
+      "connections": [
+        "Odeonsplatz",
+        "Sendlinger Tor"
+      ]
+    },
+    {
+      "stationName": "Goetheplatz",
+      "stationGlobalID": "de:09162:40",
+      "lat": 48.129457494884996,
+      "long": 11.558087698391,
+      "connections": [
+        "Sendlinger Tor",
+        "Poccistraße"
+      ]
+    },
+    {
+      "stationName": "Poccistraße",
+      "stationGlobalID": "de:09162:30",
+      "lat": 48.125295594884996,
+      "long": 11.549785198392,
+      "connections": [
+        "Goetheplatz",
+        "Implerstraße"
+      ]
+    },
+    {
+      "stationName": "Implerstraße",
+      "stationGlobalID": "de:09162:1140",
+      "lat": 48.119270894885005,
+      "long": 11.548254198392,
+      "connections": [
+        "Poccistraße",
+        "Brudermühlstraße",
+        "Harras"
+      ]
+    },
+    {
+      "stationName": "Brudermühlstraße",
+      "stationGlobalID": "de:09162:1430",
+      "lat": 48.112297694885996,
+      "long": 11.548576998392,
+      "connections": [
+        "Implerstraße",
+        "Thalkirchen (Tierpark)"
+      ]
+    },
+    {
+      "stationName": "Thalkirchen (Tierpark)",
+      "stationGlobalID": "de:09162:1440",
+      "lat": 48.101513394886005,
+      "long": 11.546073298393,
+      "connections": [
+        "Brudermühlstraße",
+        "Obersendling"
+      ]
+    },
+    {
+      "stationName": "Obersendling",
+      "stationGlobalID": "de:09162:1450",
+      "lat": 48.098291794886,
+      "long": 11.535923798394,
+      "connections": [
+        "Thalkirchen (Tierpark)",
+        "Aidenbachstraße"
+      ]
+    },
+    {
+      "stationName": "Aidenbachstraße",
+      "stationGlobalID": "de:09162:1460",
+      "lat": 48.098104194886,
+      "long": 11.524422398396,
+      "connections": [
+        "Obersendling",
+        "Machtlfinger Straße"
+      ]
+    },
+    {
+      "stationName": "Machtlfinger Straße",
+      "stationGlobalID": "de:09162:1470",
+      "lat": 48.097262294886,
+      "long": 11.514090198397,
+      "connections": [
+        "Aidenbachstraße",
+        "Forstenrieder Allee"
+      ]
+    },
+    {
+      "stationName": "Forstenrieder Allee",
+      "stationGlobalID": "de:09162:1480",
+      "lat": 48.095193294886,
+      "long": 11.497864598399,
+      "connections": [
+        "Machtlfinger Straße",
+        "Basler Straße"
+      ]
+    },
+    {
+      "stationName": "Basler Straße",
+      "stationGlobalID": "de:09162:1490",
+      "lat": 48.091264794886996,
+      "long": 11.4910592984,
+      "connections": [
+        "Forstenrieder Allee",
+        "Fürstenried West"
+      ]
+    },
+    {
+      "stationName": "Fürstenried West",
+      "stationGlobalID": "de:09162:1500",
+      "lat": 48.088514,
+      "long": 11.480442,
+      "connections": [
+        "Basler Straße"
+      ]
+    },
+    {
+      "stationName": "Westendstraße",
+      "stationGlobalID": "de:09162:260",
+      "lat": 48.134637,
+      "long": 11.521971,
+      "connections": [
+        "Heimeranplatz",
+        "Friedenheimer Straße"
+      ]
+    },
+    {
+      "stationName": "Heimeranplatz",
+      "stationGlobalID": "de:09162:1150",
+      "lat": 48.133503294885,
+      "long": 11.533585098395,
+      "connections": [
+        "Westendstraße",
+        "Schwanthalerhöhe"
+      ]
+    },
+    {
+      "stationName": "Schwanthalerhöhe",
+      "stationGlobalID": "de:09162:250",
+      "lat": 48.133770394885005,
+      "long": 11.540222198394,
+      "connections": [
+        "Heimeranplatz",
+        "Theresienwiese"
+      ]
+    },
+    {
+      "stationName": "Theresienwiese",
+      "stationGlobalID": "de:09162:240",
+      "lat": 48.135642994884996,
+      "long": 11.552368298392,
+      "connections": [
+        "Schwanthalerhöhe",
+        "München Hbf"
+      ]
+    },
+    {
+      "stationName": "Karlsplatz (Stachus)",
+      "stationGlobalID": "de:09162:1",
+      "lat": 48.139791894885,
+      "long": 11.56589399839,
+      "connections": [
+        "München Hbf",
+        "Odeonsplatz"
+      ]
+    },
+    {
+      "stationName": "Max-Weber-Platz",
+      "stationGlobalID": "de:09162:580",
+      "lat": 48.135753794885005,
+      "long": 11.598205998386,
+      "connections": [
+        "Lehel",
+        "Prinzregentenplatz",
+        "München, Ostbahnhof"
+      ]
+    },
+    {
+      "stationName": "Prinzregentenplatz",
+      "stationGlobalID": "de:09162:570",
+      "lat": 48.139247194885,
+      "long": 11.606913498384001,
+      "connections": [
+        "Max-Weber-Platz",
+        "Böhmerwaldplatz"
+      ]
+    },
+    {
+      "stationName": "Böhmerwaldplatz",
+      "stationGlobalID": "de:09162:560",
+      "lat": 48.143527994885,
+      "long": 11.615488498383,
+      "connections": [
+        "Prinzregentenplatz",
+        "Richard-Strauss-Straße"
+      ]
+    },
+    {
+      "stationName": "Richard-Strauss-Straße",
+      "stationGlobalID": "de:09162:680",
+      "lat": 48.148532,
+      "long": 11.6166,
+      "connections": [
+        "Böhmerwaldplatz",
+        "Arabellapark"
+      ]
+    },
+    {
+      "stationName": "Arabellapark",
+      "stationGlobalID": "de:09162:670",
+      "lat": 48.153279,
+      "long": 11.620427,
+      "connections": [
+        "Richard-Strauss-Straße"
+      ]
+    },
+    {
+      "stationName": "Laimer Platz",
+      "stationGlobalID": "de:09162:280",
+      "lat": 48.135459,
+      "long": 11.501921,
+      "connections": [
+        "Friedenheimer Straße"
+      ]
+    },
+    {
+      "stationName": "Friedenheimer Straße",
+      "stationGlobalID": "de:09162:270",
+      "lat": 48.135101094885,
+      "long": 11.509921598398,
+      "connections": [
+        "Laimer Platz",
+        "Westendstraße"
+      ]
+    },
+    {
+      "stationName": "München, Ostbahnhof",
+      "stationGlobalID": "de:09162:5",
+      "lat": 48.12815,
+      "long": 11.604545,
+      "connections": [
+        "Max-Weber-Platz",
+        "Innsbrucker Ring"
+      ]
+    },
+    {
+      "stationName": "Michaelibad",
+      "stationGlobalID": "de:09162:1050",
+      "lat": 48.118405694885,
+      "long": 11.631433098380999,
+      "connections": [
+        "Innsbrucker Ring",
+        "Quiddestraße"
+      ]
+    },
+    {
+      "stationName": "Quiddestraße",
+      "stationGlobalID": "de:09162:1040",
+      "lat": 48.108918794886,
+      "long": 11.646594298379,
+      "connections": [
+        "Michaelibad",
+        "Therese-Giehse-Allee"
+      ]
+    },
+    {
+      "stationName": "Therese-Giehse-Allee",
+      "stationGlobalID": "de:09162:1020",
+      "lat": 48.094796294886,
+      "long": 11.642666098379,
+      "connections": [
+        "Quiddestraße",
+        "Neuperlach Zentrum"
+      ]
+    },
+    {
+      "stationName": "Neuperlach Zentrum",
+      "stationGlobalID": "de:09162:1030",
+      "lat": 48.10120949488601,
+      "long": 11.646084698379001,
+      "connections": [
+        "Therese-Giehse-Allee",
+        "Neuperlach Süd"
+      ]
+    },
+    {
+      "stationName": "Neuperlach Süd",
+      "stationGlobalID": "de:09162:1010",
+      "lat": 48.089372,
+      "long": 11.644609,
+      "connections": [
+        "Neuperlach Zentrum"
+      ]
+    },
+    {
+      "stationName": "Garching, Forschungszentrum",
+      "stationGlobalID": "de:09184:460",
+      "lat": 48.264861,
+      "long": 11.671227,
+      "connections": [
+        "Garching"
+      ]
+    },
+    {
+      "stationName": "Garching",
+      "stationGlobalID": "de:09184:490",
+      "lat": 48.24938429488,
+      "long": 11.652429698378,
+      "connections": [
+        "Garching, Forschungszentrum",
+        "Garching-Hochbrück"
+      ]
+    },
+    {
+      "stationName": "Garching-Hochbrück",
+      "stationGlobalID": "de:09184:480",
+      "lat": 48.24737989488,
+      "long": 11.631075998381,
+      "connections": [
+        "Garching (b München)",
+        "Fröttmaning"
+      ]
+    },
+    {
+      "stationName": "Fröttmaning",
+      "stationGlobalID": "de:09162:470",
+      "lat": 48.211863394882,
+      "long": 11.616482198383,
+      "connections": [
+        "Garching-Hochbrück",
+        "Kieferngarten"
+      ]
+    },
+    {
+      "stationName": "Kieferngarten",
+      "stationGlobalID": "de:09162:430",
+      "lat": 48.203075,
+      "long": 11.613016,
+      "connections": [
+        "Fröttmaning",
+        "Freimann"
+      ]
+    },
+    {
+      "stationName": "Freimann",
+      "stationGlobalID": "de:09162:420",
+      "lat": 48.191988294883,
+      "long": 11.614189698382999,
+      "connections": [
+        "Kieferngarten",
+        "Studentenstadt"
+      ]
+    },
+    {
+      "stationName": "Studentenstadt",
+      "stationGlobalID": "de:09162:540",
+      "lat": 48.183908694882994,
+      "long": 11.607973798384,
+      "connections": [
+        "Freimann",
+        "Alte Heide"
+      ]
+    },
+    {
+      "stationName": "Alte Heide",
+      "stationGlobalID": "de:09162:530",
+      "lat": 48.178651194882995,
+      "long": 11.602554098385001,
+      "connections": [
+        "Studentenstadt",
+        "Nordfriedhof"
+      ]
+    },
+    {
+      "stationName": "Nordfriedhof",
+      "stationGlobalID": "de:09162:520",
+      "lat": 48.173591094883,
+      "long": 11.597364598386001,
+      "connections": [
+        "Alte Heide",
+        "Dietlindenstraße"
+      ]
+    },
+    {
+      "stationName": "Dietlindenstraße",
+      "stationGlobalID": "de:09162:510",
+      "lat": 48.166686794884,
+      "long": 11.590270998387,
+      "connections": [
+        "Nordfriedhof",
+        "Münchner Freiheit"
+      ]
+    },
+    {
+      "stationName": "Giselastraße",
+      "stationGlobalID": "de:09162:80",
+      "lat": 48.156521,
+      "long": 11.584,
+      "connections": [
+        "Münchner Freiheit",
+        "Universität"
+      ]
+    },
+    {
+      "stationName": "Harras",
+      "stationGlobalID": "de:09162:1130",
+      "lat": 48.116940194886,
+      "long": 11.536123398394,
+      "connections": [
+        "Implerstraße",
+        "Partnachplatz"
+      ]
+    },
+    {
+      "stationName": "Partnachplatz",
+      "stationGlobalID": "de:09162:1330",
+      "lat": 48.117051094885994,
+      "long": 11.526456198396,
+      "connections": [
+        "Harras",
+        "Westpark"
+      ]
+    },
+    {
+      "stationName": "Westpark",
+      "stationGlobalID": "de:09162:1340",
+      "lat": 48.117937294886,
+      "long": 11.517011598397,
+      "connections": [
+        "Partnachplatz",
+        "Holzapfelkreuth"
+      ]
+    },
+    {
+      "stationName": "Holzapfelkreuth",
+      "stationGlobalID": "de:09162:1510",
+      "lat": 48.116364294886,
+      "long": 11.502390098399001,
+      "connections": [
+        "Westpark",
+        "Haderner Stern"
+      ]
+    },
+    {
+      "stationName": "Haderner Stern",
+      "stationGlobalID": "de:09162:1520",
+      "lat": 48.118449194885,
+      "long": 11.488841798401,
+      "connections": [
+        "Holzapfelkreuth",
+        "Großhadern"
+      ]
+    },
+    {
+      "stationName": "Großhadern",
+      "stationGlobalID": "de:09162:1530",
+      "lat": 48.115275694886,
+      "long": 11.477059298402,
+      "connections": [
+        "Haderner Stern",
+        "Klinikum Großhadern"
+      ]
+    },
+    {
+      "stationName": "Klinikum Großhadern",
+      "stationGlobalID": "de:09162:1540",
+      "lat": 48.108972,
+      "long": 11.473624,
+      "connections": [
+        "Großhadern"
+      ]
+    }
+  ]
+}
