@@ -17,5 +17,6 @@ MonoBehaviour:
   description: 'Neighbours: Messestadt West'
   neigbours:
   - {fileID: 11400000, guid: 1d5890c6bec12a2a2a71ee78138aa607, type: 2}
+  uBahnLines: 02000000
   lon: 11.703261
   lat: 48.133384

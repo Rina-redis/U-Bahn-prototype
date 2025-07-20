@@ -19,5 +19,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1b60e9460cc1a96eda5eaf17899ddd5c, type: 2}
   - {fileID: 11400000, guid: 211d39ac1f08a65a69538e20cbc21863, type: 2}
   - {fileID: 11400000, guid: d146177294ba43d1d811226b8010e1cc, type: 2}
+  uBahnLines: 0100000002000000
   lon: 11.575027498389
   lat: 48.128646694885

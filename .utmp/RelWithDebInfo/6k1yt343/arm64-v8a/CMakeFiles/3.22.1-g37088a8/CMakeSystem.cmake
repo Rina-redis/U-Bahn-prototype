@@ -1,6 +1,6 @@
-set(CMAKE_HOST_SYSTEM "Linux-6.12.37-1-MANJARO")
+set(CMAKE_HOST_SYSTEM "Linux-6.12.38-1-MANJARO")
 set(CMAKE_HOST_SYSTEM_NAME "Linux")
-set(CMAKE_HOST_SYSTEM_VERSION "6.12.37-1-MANJARO")
+set(CMAKE_HOST_SYSTEM_VERSION "6.12.38-1-MANJARO")
 set(CMAKE_HOST_SYSTEM_PROCESSOR "x86_64")
 
 include("/home/tomato/Unity/Hub/Editor/6000.0.24f1/Editor/Data/PlaybackEngines/AndroidPlayer/NDK/build/cmake/android.toolchain.cmake")

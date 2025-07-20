@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -24,6 +25,8 @@ public class PlayerInventory : MonoBehaviour
     [SerializeField] private string nickname = "Roflopafl";
 
     [SerializeField] private PlayerCombatSystemData ingeneerData;
+    [SerializeField] private PlayerCombatSystemData RangerData;
+    [SerializeField] private PlayerCombatSystemData WarriorData;
 
 
     void Awake()
@@ -42,7 +45,6 @@ public class PlayerInventory : MonoBehaviour
             maxActiveConsumables = 1;
         }
         activeConsumables = new InventorySlot[maxActiveConsumables];
-        LoadInventory();
     }
 
     void Start()
@@ -62,9 +64,9 @@ public class PlayerInventory : MonoBehaviour
         {
             currentWeapon = ItemManager.instance.emptyWeapon;
         }
-
-        InventoryChanged.Invoke();
-        EquipmentChanged.Invoke();
+        
+        //LoadInventory();
+        //EquipmentChanged.Invoke();
     }
 
     public PlayerInventory AddItem(ScriptableItemBase item)
@@ -79,13 +81,27 @@ public class PlayerInventory : MonoBehaviour
             }
         }
         inventoryStash.Add(new InventorySlot(item).AddItem(item));
+        SpacetimeDBController.instance.SetInventory(inventoryStash);
         InventoryChanged.Invoke();
         return this;
     }
 
-    private void LoadInventory()
+    private async void LoadInventory()
     {
+
+        var db = SpacetimeDBController.instance;
+        currentArmor = await db.GetCurrentArmor();
+        currentWeapon = await db.GetCurrentWeapon();
+        var consumables = await db.GetActiveConsumables();
+        for (int i = 0; i < activeConsumables.Length&&i<consumables.Count; ++i)
+        {
+            activeConsumables[i] = consumables[i];
+        }
+        inventoryStash = await db.GetInventory();
+        playerMoney = await db.GetPlayerMoney();
+        ChangeClass(await db.GetPlayerClass());
         // Loading inventory from Server
+        InventoryChanged.Invoke();
     }
 
     public PlayerInventory RemoveItem(ScriptableItemBase item)
@@ -99,18 +115,20 @@ public class PlayerInventory : MonoBehaviour
                 {
                     inventoryStash.Remove(slot);
                 }
+                SpacetimeDBController.instance.SetInventory(inventoryStash);
                 InventoryChanged.Invoke();
                 return this;
             }
         }
         Debug.LogError("Removing nonexisitng item");
-
         return this;
     }
 
     public PlayerInventory RemoveSlot(InventorySlot slot)
     {
         inventoryStash.Remove(slot);
+        SpacetimeDBController.instance.SetInventory(inventoryStash);
+
         return this;
     }
 
@@ -139,6 +157,7 @@ public class PlayerInventory : MonoBehaviour
         }
         RemoveItem(armor);
         currentArmor = (ScriptableArmor)armor;
+        SpacetimeDBController.instance.SetCurrentArmor(currentArmor);
         InventoryChanged.Invoke();
         EquipmentChanged.Invoke();
     }
@@ -156,6 +175,7 @@ public class PlayerInventory : MonoBehaviour
         }
         RemoveItem(weapon);
         currentWeapon = (ScriptableWeapon)weapon;
+        SpacetimeDBController.instance.SetCurrentWeapon(currentWeapon);
         InventoryChanged.Invoke();
         EquipmentChanged.Invoke();
     }
@@ -163,6 +183,7 @@ public class PlayerInventory : MonoBehaviour
     public PlayerInventory AddSlot(InventorySlot slot)
     {
         inventoryStash.Add(slot);
+        SpacetimeDBController.instance.SetInventory(inventoryStash);
         return this;
     }
 
@@ -178,6 +199,8 @@ public class PlayerInventory : MonoBehaviour
         }
         RemoveSlot(slot);
         activeConsumables[slotIndex] = slot;
+
+        SpacetimeDBController.instance.SetActiveConsumables(activeConsumables.ToList());
         InventoryChanged.Invoke();
         EquipmentChanged.Invoke();
     }
@@ -244,6 +267,7 @@ public class PlayerInventory : MonoBehaviour
             return false;
         }
         playerMoney -= price;
+        SpacetimeDBController.instance.SetPlayerMoney(playerMoney);
         MoneyChanged.Invoke();
         return true;
     }
@@ -251,6 +275,7 @@ public class PlayerInventory : MonoBehaviour
     public void GainMoney(int gain)
     {
         playerMoney += gain;
+        SpacetimeDBController.instance.SetPlayerMoney(playerMoney);
     }
 
     public int GetMoney()
@@ -286,6 +311,8 @@ public class PlayerInventory : MonoBehaviour
             //EquipmentChanged.Invoke();
         }
         currentClass = newClass;
+        SpacetimeDBController.instance.SetPlayersClass(currentClass);
+
         InventoryChanged.Invoke();
 
     }
@@ -300,12 +327,14 @@ public class PlayerInventory : MonoBehaviour
         return currentClass;
     }
 
-    public PlayerCombatSystemData GetPlayerCombtSystemData()
+    public PlayerCombatSystemData GetPlayerCombatSystemData()
     {
         switch (currentClass)
         {
             case PlayerClass.Warrior:
+                return WarriorData;
             case PlayerClass.Ranger:
+                return RangerData;
             case PlayerClass.Ingeniur:
                 return ingeneerData;
         }

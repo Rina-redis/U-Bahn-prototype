@@ -18,5 +18,6 @@ MonoBehaviour:
   neigbours:
   - {fileID: 11400000, guid: 1fd6d280dc180b08a80be0f3e0339e21, type: 2}
   - {fileID: 11400000, guid: 0ba799199f16cf2a192d956f4e6ddc3c, type: 2}
+  uBahnLines: 0300000006000000
   lon: 11.584
   lat: 48.156521

@@ -17,5 +17,6 @@ MonoBehaviour:
   description: "Neighbours: Richard-Strauss-Stra\xDFe"
   neigbours:
   - {fileID: 11400000, guid: 5cbd809d7741af2c89cdc5b408a6eadc, type: 2}
+  uBahnLines: 04000000
   lon: 11.620427
   lat: 48.153279

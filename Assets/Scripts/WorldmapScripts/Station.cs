@@ -10,6 +10,7 @@ public class Station
     public string Description { get; }
     public float Wealth;
     public List<Station> Neighbours { get; }
+    public List<UBahnLine> uBahnLines { get; }
 
     public int StationTier = 0;
 
@@ -22,6 +23,7 @@ public class Station
         Id = obj.id;
         StationName = obj.stationName;
         Description = obj.description;
+        uBahnLines = obj.uBahnLines;
         lon = obj.lon;
         lat = obj.lat;
     }

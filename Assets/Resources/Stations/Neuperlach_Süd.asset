@@ -16,6 +16,7 @@ MonoBehaviour:
   stationName: "Neuperlach S\xFCd"
   description: 'Neighbours: Neuperlach Zentrum'
   neigbours:
-  - {fileID: 11400000, guid: 82c8d9f333d71acd18dfc457b221f049, type: 2}
+  - {fileID: 11400000, guid: 7ddccae1778fbc119835fe66942ee0b1, type: 2}
+  uBahnLines: 05000000
   lon: 11.644609
   lat: 48.089372

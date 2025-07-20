@@ -3,6 +3,7 @@
     "com.clockworklabs.spacetimedbsdk": "https://github.com/clockworklabs/com.clockworklabs.spacetimedbsdk.git",
     "com.emrecelik95.lightscrollsnap": "https://github.com/emrecelik95/LightScrollSnap.git",
     "com.unity.adaptiveperformance": "5.1.4",
+    "com.unity.adaptiveperformance.google.android": "5.1.4",
     "com.unity.ai.navigation": "2.0.8",
     "com.unity.cinemachine": "3.1.4",
     "com.unity.collab-proxy": "2.8.2",

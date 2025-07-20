@@ -16,7 +16,8 @@ MonoBehaviour:
   stationName: Therese-Giehse-Allee
   description: "Neighbours: Quiddestra\xDFe, Neuperlach Zentrum"
   neigbours:
-  - {fileID: 11400000, guid: c2710a65e161b65319ff3bb2594cbe1f, type: 2}
   - {fileID: 11400000, guid: 82c8d9f333d71acd18dfc457b221f049, type: 2}
+  - {fileID: 11400000, guid: 0fc8bce102eb063f0a86fd8c03d2c4e0, type: 2}
+  uBahnLines: 05000000
   lon: 11.642666098379
   lat: 48.094796294886

@@ -17,5 +17,6 @@ MonoBehaviour:
   description: 'Neighbours: Hasenbergl'
   neigbours:
   - {fileID: 11400000, guid: 1796ae408fbc400cca8176bfc829c5b9, type: 2}
+  uBahnLines: 02000000
   lon: 11.540827
   lat: 48.213833

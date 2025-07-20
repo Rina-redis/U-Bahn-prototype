@@ -17,5 +17,6 @@ MonoBehaviour:
   description: 'Neighbours: Garching'
   neigbours:
   - {fileID: 11400000, guid: 20697fa00eb6800f7b98a22fa2cd0da7, type: 2}
+  uBahnLines: 06000000
   lon: 11.671227
   lat: 48.264861

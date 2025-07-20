@@ -10,6 +10,8 @@ public class StationObj : ScriptableObject
     public string description = "";
     public List<StationObj> neigbours = new List<StationObj>();
 
+    public List<UBahnLine> uBahnLines = new List<UBahnLine>();
+
     public double lon;
     public double lat;
 

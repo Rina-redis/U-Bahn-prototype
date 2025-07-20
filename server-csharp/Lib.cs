@@ -96,7 +96,6 @@ public static partial class Module
             armor_id = 0,
             weapon_id = 0,
         };
-
         ctx.Db.player.Insert(newPlayer);
     }
 

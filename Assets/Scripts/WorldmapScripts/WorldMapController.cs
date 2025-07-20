@@ -2,8 +2,7 @@ using System.Collections.Generic;
 using System.Collections;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.Events;
-using NUnit.Framework;
+using System;
 
 public class WorldMapController : MonoBehaviour
 {
@@ -16,6 +15,8 @@ public class WorldMapController : MonoBehaviour
     [SerializeField] private StationTierData tierConfig;
 
     public HashSet<Station> map = new HashSet<Station>();
+
+
     private Coroutine _stationChecker;
 
     public bool temp = false;
@@ -57,8 +58,13 @@ public class WorldMapController : MonoBehaviour
         LoadMapData();
 
         // remove it later
-        StartChecking();
+        //StartChecking();
 
+    }
+
+    private void Start()
+    {
+        StartChecking();
     }
 
     private void LoadMapData()
@@ -70,7 +76,7 @@ public class WorldMapController : MonoBehaviour
 
         foreach (string id in ids)
         {
-            stationScores.Add(id, Random.Range(0, 1000));
+            stationScores.Add(id, UnityEngine.Random.Range(0, 1000));
         }
         //--------------------------------------------------
 
@@ -143,19 +149,24 @@ public class WorldMapController : MonoBehaviour
         _stationChecker = null;
     }
 
+    public HashSet<Station> getMap()
+    {
+        return map;
+    }
+
     IEnumerator CheckForStation()
     {
         while (true)
         {
             // if check for station 
-            string nearestStationId = "a";
-            if (temp) // if station is near
+            string nearestStationId = GpsMvgManager.instance.IsOnStation();
+            if (nearestStationId !=String.Empty) // if station is near
             {
                 if (!isOnStation)
                 {
                     //mock
                     isOnStation = true;
-                    ConnectToStation(instance.GetStationById("de:09162:780"));
+                    ConnectToStation(instance.GetStationById(nearestStationId));
                 }
             }
             else

@@ -146,7 +146,7 @@ public class UIInventorySlector : MonoBehaviour, IPointerClickHandler, IPointerD
                         selectorText.text = "Inventory: ";
                         selectedInventorySlot = null;
                         state = SelectorState.NoSelection;
-                        //controller.Rebuild();
+                        controller.Rebuild();
                         return;
                     }
                     break;

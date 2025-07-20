@@ -17,5 +17,6 @@ MonoBehaviour:
   description: "Neighbours: Friedenheimer Stra\xDFe"
   neigbours:
   - {fileID: 11400000, guid: fd8518f3e39f501d08a6f90f3c642e8a, type: 2}
+  uBahnLines: 05000000
   lon: 11.501921
   lat: 48.135459

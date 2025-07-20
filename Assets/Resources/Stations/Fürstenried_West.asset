@@ -17,5 +17,6 @@ MonoBehaviour:
   description: "Neighbours: Basler Stra\xDFe"
   neigbours:
   - {fileID: 11400000, guid: 79f1bc5a9591ccebd8ea9b851b262def, type: 2}
+  uBahnLines: 03000000
   lon: 11.480442
   lat: 48.088514

@@ -1,5 +1,7 @@
 using System.Linq;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIInventoryController : MonoBehaviour
 {
@@ -9,6 +11,7 @@ public class UIInventoryController : MonoBehaviour
     [SerializeField] public UIItemSlot UIarmor;
     [SerializeField] public UIItemSlot UIweapon;
     [SerializeField] public UIConsumableSlots UIConsumable;
+    [SerializeField] private TMP_Dropdown dropdown;
 
     private UIInventorySlector selector;
 
@@ -18,6 +21,7 @@ public class UIInventoryController : MonoBehaviour
         inventory = PlayerInventory.instance;
         inventory.InventoryChanged.AddListener(Rebuild);
         selector = GetComponent<UIInventorySlector>();
+
     }
 
     public void SetInventory(PlayerInventory pInv)
@@ -39,13 +43,13 @@ public class UIInventoryController : MonoBehaviour
         switch (selector.state)
         {
             case UIInventorySlector.SelectorState.SelectingArmor:
-                stash.ShowArmorOptions(inventory.GetInventory().Where(item => item.GetSample().itemClass == inventory.GetClass()||item.GetSample().itemClass == PlayerInventory.PlayerClass.None).ToList());
+                stash.ShowArmorOptions(inventory.GetInventory().Where(item => item.GetSample().itemClass == inventory.GetClass() || item.GetSample().itemClass == PlayerInventory.PlayerClass.None).ToList());
                 break;
             case UIInventorySlector.SelectorState.SelectingWeapon:
-                stash.ShowWeaponOptions(inventory.GetInventory().Where(item => item.GetSample().itemClass == inventory.GetClass()||item.GetSample().itemClass == PlayerInventory.PlayerClass.None).ToList());
+                stash.ShowWeaponOptions(inventory.GetInventory().Where(item => item.GetSample().itemClass == inventory.GetClass() || item.GetSample().itemClass == PlayerInventory.PlayerClass.None).ToList());
                 break;
             case UIInventorySlector.SelectorState.SelectingConsumable:
-                stash.ShowConsumableOptions(inventory.GetInventory().Where(item => item.GetSample().itemClass == inventory.GetClass()||item.GetSample().itemClass == PlayerInventory.PlayerClass.None).ToList());
+                stash.ShowConsumableOptions(inventory.GetInventory().Where(item => item.GetSample().itemClass == inventory.GetClass() || item.GetSample().itemClass == PlayerInventory.PlayerClass.None).ToList());
                 break;
             default:
                 stash.Rebuild(inventory.GetInventory());
@@ -54,6 +58,8 @@ public class UIInventoryController : MonoBehaviour
         UIarmor.RefreshSlot(inventory.GetCurrentArmor());
         UIweapon.RefreshSlot(inventory.GetCurrentWeapon());
         UIConsumable.Rebuild(inventory.GetActiveConsumables());
+        dropdown.value = (int)inventory.GetClass() - 1;
+        dropdown.RefreshShownValue();
     }
 
     public void ChangeClass(int newClass){

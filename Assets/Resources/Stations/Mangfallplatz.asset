@@ -17,5 +17,6 @@ MonoBehaviour:
   description: 'Neighbours: St.-Quirin-Platz'
   neigbours:
   - {fileID: 11400000, guid: 1e21df57573c9785da4e54bbba5691a2, type: 2}
+  uBahnLines: 01000000
   lon: 11.579967
   lat: 48.097448

@@ -17,5 +17,6 @@ MonoBehaviour:
   description: 'Neighbours: Moosacher St.-Martins-Platz'
   neigbours:
   - {fileID: 11400000, guid: 1cf54feabbe06b708a88d1fb318edbf4, type: 2}
+  uBahnLines: 03000000
   lon: 11.507643
   lat: 48.180792

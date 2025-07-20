@@ -17,5 +17,6 @@ MonoBehaviour:
   description: "Neighbours: Gro\xDFhadern"
   neigbours:
   - {fileID: 11400000, guid: 4cdd959c7125ba775ba04f6389c09455, type: 2}
+  uBahnLines: 06000000
   lon: 11.473624
   lat: 48.108972

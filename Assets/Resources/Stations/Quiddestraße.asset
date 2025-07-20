@@ -17,6 +17,7 @@ MonoBehaviour:
   description: 'Neighbours: Michaelibad, Therese-Giehse-Allee'
   neigbours:
   - {fileID: 11400000, guid: ff4cee171b4bf0a3d93fcd587cf54806, type: 2}
-  - {fileID: 11400000, guid: 7ddccae1778fbc119835fe66942ee0b1, type: 2}
+  - {fileID: 11400000, guid: 82c8d9f333d71acd18dfc457b221f049, type: 2}
+  uBahnLines: 05000000
   lon: 11.646594298379
   lat: 48.108918794886

@@ -16,7 +16,8 @@ MonoBehaviour:
   stationName: Neuperlach Zentrum
   description: "Neighbours: Therese-Giehse-Allee, Neuperlach S\xFCd"
   neigbours:
+  - {fileID: 11400000, guid: c2710a65e161b65319ff3bb2594cbe1f, type: 2}
   - {fileID: 11400000, guid: 7ddccae1778fbc119835fe66942ee0b1, type: 2}
-  - {fileID: 11400000, guid: 0fc8bce102eb063f0a86fd8c03d2c4e0, type: 2}
+  uBahnLines: 05000000
   lon: 11.646084698379
   lat: 48.10120949488601

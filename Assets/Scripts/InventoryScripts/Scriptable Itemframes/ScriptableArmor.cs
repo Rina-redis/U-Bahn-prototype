@@ -7,6 +7,7 @@ public class ScriptableArmor : ScriptableItemBase
 {
     public float additionalHealth;
     public float armor;
+    public Sprite PlayerSprite;
     
     public UnitData unitData;
 
