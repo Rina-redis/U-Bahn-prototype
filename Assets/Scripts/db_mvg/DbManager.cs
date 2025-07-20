@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using System.Threading.Tasks;
 using SpacetimeDB;
 using SpacetimeDB.Types;
 using System.Collections.Generic;
@@ -8,8 +9,7 @@ public class DbManager
 {
     private string player_id;
 
-    private bool IsReady = false;
-    private Queue<Action> pendingActions = new Queue<Action>();
+    private TaskCompletionSource<bool> connectionReady = new TaskCompletionSource<bool>();
 
     public DbManager(string player_name)
     {
@@ -37,7 +37,7 @@ public class DbManager
     public static Identity LocalIdentity { get; private set; }
     public static DbConnection Conn { get; private set; }
 
-    void HandleConnect(DbConnection conn, Identity identity, string token)
+    private void HandleConnect(DbConnection conn, Identity identity, string token)
     {
         Debug.Log("[GameManager] Connected to SpacetimeDB.");
         AuthToken.SaveToken(token);
@@ -53,20 +53,15 @@ public class DbManager
     private void HandleSubscriptionApplied(SubscriptionEventContext ctx)
     {
         Debug.Log("Subscription applied!");
-        IsReady = true;
-
-        while (pendingActions.Count > 0)
-        {
-            pendingActions.Dequeue().Invoke();
-        }
+        connectionReady.TrySetResult(true);
     }
 
-    void HandleConnectError(Exception ex)
+    private void HandleConnectError(Exception ex)
     {
         Debug.LogError($"[GameManager] Connection error: {ex}");
     }
 
-    void HandleDisconnect(DbConnection conn, Exception ex)
+    private void HandleDisconnect(DbConnection conn, Exception ex)
     {
         Debug.LogWarning("[GameManager] Disconnected.");
         if (ex != null)
@@ -75,107 +70,76 @@ public class DbManager
         }
     }
 
-    public void RunWhenReady(Action action)
+    private async Task WaitUntilReady()
     {
-        if (IsReady) action();
-        else pendingActions.Enqueue(action);
+        await connectionReady.Task;
     }
 
     ////////////////////////////////////////////////////////
-    /// TWOJE METODY (wszystkie przez RunWhenReady)
+    /// TWOJE METODY ASYNC
 
-    public uint get_armor_id()
+    public async Task<uint> get_armor_id()
     {
-        uint armor_id = 0;
-        RunWhenReady(() =>
-        {
-            var player = Conn.Db.Player.PlayerId.Find(player_id);
-            armor_id = player.ArmorId;
-        });
-        return armor_id;
+        await WaitUntilReady();
+        var player = Conn.Db.Player.PlayerId.Find(player_id);
+        return player?.ArmorId ?? 0;
     }
 
-    public void set_armor(uint armor_id)
+    public async Task set_armor(uint armor_id)
     {
-        RunWhenReady(() =>
-        {
-            Conn.Reducers.EquipArmor(armor_id, player_id);
-        });
+        await WaitUntilReady();
+        Conn.Reducers.EquipArmor(armor_id, player_id);
     }
 
-    public uint get_weapon_id()
+    public async Task<uint> get_weapon_id()
     {
-        uint weapon_id = 0;
-        RunWhenReady(() =>
-        {
-            var player = Conn.Db.Player.PlayerId.Find(player_id);
-            weapon_id = player.ArmorId;
-        });
-        return weapon_id;
+        await WaitUntilReady();
+        var player = Conn.Db.Player.PlayerId.Find(player_id);
+        return player?.WeaponId ?? 0;
     }
 
-    public void set_weapon(uint weapon_id)
+    public async Task set_weapon(uint weapon_id)
     {
-        RunWhenReady(() =>
-        {
-            Conn.Reducers.EquipWeapon(weapon_id, player_id);
-        });
+        await WaitUntilReady();
+        Conn.Reducers.EquipWeapon(weapon_id, player_id);
     }
 
-    public List<Item> get_inventory()
+    public async Task<List<Item>> get_inventory()
     {
-        List<Item> inventory = new List<Item>();
-        RunWhenReady(() =>
-        {
-            var player = Conn.Db.Player.PlayerId.Find(player_id);
-            inventory = player.Items;
-        });
-        return inventory;
-
+        await WaitUntilReady();
+        var player = Conn.Db.Player.PlayerId.Find(player_id);
+        return player?.Items ?? new List<Item>();
     }
 
-    public void set_inventory(List<Item> items)
+    public async Task set_inventory(List<Item> items)
     {
-        RunWhenReady(() =>
-        {
-            Debug.Log($"[DbManager] (TODO) Set inventory with {items?.Count ?? 0} items");
-            // Implementacja zależna od logiki reducerów
-        });
+        await WaitUntilReady();
+        Conn.Reducers.SetInventoryToPlayer(player_id, items);
     }
 
-    public void get_consumables()
+    public async Task<List<Item>> get_consumables()
     {
-        RunWhenReady(() =>
-        {
-            var player = Conn.Db.Player.PlayerId.Find(player_id);
-            Debug.Log($"[DbManager] Consumables: {player?.Consumables?.Count ?? 0} items");
-        });
+        await WaitUntilReady();
+        var player = Conn.Db.Player.PlayerId.Find(player_id);
+        return player?.Consumables ?? new List<Item>();
     }
 
-    public void set_consumables(List<Item> items)
+    public async Task set_consumables(List<Item> items)
     {
-        RunWhenReady(() =>
-        {
-            Debug.Log($"[DbManager] (TODO) Set consumables with {items?.Count ?? 0} items");
-            // Implementacja zależna od logiki reducerów
-        });
+        await WaitUntilReady();
+        Conn.Reducers.SetConsumablesToPlayer(player_id, items);
     }
 
-    public void get_player_class()
+    public async Task<string> get_player_class()
     {
-        RunWhenReady(() =>
-        {
-            var player = Conn.Db.Player.PlayerId.Find(player_id);
-            Debug.Log($"[DbManager] Class: {player?.ClassName}");
-        });
+        await WaitUntilReady();
+        var player = Conn.Db.Player.PlayerId.Find(player_id);
+        return player?.ClassName ?? "Unknown";
     }
 
-    public void set_player_class(string class_name)
+    public async Task set_player_class(string class_name)
     {
-        RunWhenReady(() =>
-        {
-            Debug.Log($"[DbManager] (TODO) Set class to {class_name}");
-            // Można dodać reducer
-        });
+        await WaitUntilReady();
+        Conn.Reducers.SetPlayerClass(player_id, class_name);
     }
 }
