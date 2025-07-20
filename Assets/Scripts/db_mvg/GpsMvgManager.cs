@@ -10,8 +10,8 @@ public class GpsMvgManager : MonoBehaviour
     public static float maxDistance = 100f, minSpeed = 20f, maxTimeToGo = 2f;
     private float latitude, longitude;
     private float speed = 0.0f;
-    private int loop_delay = 1; 
-    private bool isMoving = false;
+    private int loop_delay = 1;
+    private bool isMoving = false, isOnStation = false;
 
     public TextAsset stationsJson;
 
@@ -85,6 +85,7 @@ public class GpsMvgManager : MonoBehaviour
 
             if (distanceToStation <= maxDistance)
             {
+                isOnStation = true;
 
                 //Debug.Log($"In the range of station. Distance: {distanceToStation:F2} m");
 
@@ -139,6 +140,7 @@ public class GpsMvgManager : MonoBehaviour
             }
             else
             {
+                isOnStation = false;
                 //Debug.Log($"Not in the range of station. Distance: {distanceToStation:F2} m");
 
                 if (isMoving)
@@ -153,6 +155,14 @@ public class GpsMvgManager : MonoBehaviour
 
             yield return new WaitForSeconds(loop_delay);
         }
+        
+    }
+    public string IsOnStation()
+    {
+        if (isOnStation) {
+            return originStation.stationGlobalID;
+        }
+        return "";
     }
 
     public IEnumerator FetchArrivalTime(

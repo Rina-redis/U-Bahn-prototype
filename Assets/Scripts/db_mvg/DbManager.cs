@@ -91,6 +91,19 @@ public class DbManager
         Conn.Reducers.EquipArmor(armor_id, player_id);
     }
 
+    public async Task<uint> get_player_money()
+    {
+        await WaitUntilReady();
+        var player = Conn.Db.Player.PlayerId.Find(player_id);
+        return player?.Money ?? 0;
+    }
+
+    public async Task set_player_money(uint _money)
+    {
+        await WaitUntilReady();
+        Conn.Reducers.SetPlayerMoney(player_id, _money);
+    }
+
     public async Task<uint> get_weapon_id()
     {
         await WaitUntilReady();
